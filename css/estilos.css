@@ -164,49 +164,22 @@ a:hover {
   
 }
 
-.sobre h2,
 .contato h2,
 .portfolio h2 {
   font-family: "Poppins", sans-serif;
-  margin-bottom: 2em;
-  font-size: 2em;
-  /*text-align: center;*/
-}
-
-.sobre a{
-  color: teal;
-}
-
-/* .sobre a:hover{
-  color: teal;
-} */
-
-.sobre p{
   margin-bottom: 1em;
-  text-indent: 1.5em; /*recuo do paragrafo*/
-  text-align: justify; /*justifica o texto*/
-}
-
-.sobre .avatar{
-  margin-left: 2em;
-  text-align: center;
-  margin-bottom: 20px;
-} 
-
-@media (min-width:600px){
-  .sobre .avatar{
-    float: right;/*deveria fazer o texto ficar do lado da imagem mas quebrou o codigo e eu nao faco a minima ideia pq - so funcionou quando fixei o background*/
-  }
-}
-
-.sobre .avatar img{
-  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /*tipo uma mascara, mas corta o elemento. https://bennettfeely.com/clippy/ - site com poligonos prontos.*/
+  margin-top: 1em;
+  font-size: 2em;
+  color: #f0f0f0;
+  /*text-align: center;*/
 }
 
 .portfolio .grid {
   display: grid; /*diferentemente do flex, o grid nao forca colunas*/
   gap: 1.5em; /*quando usar grid nao usar margin, mas sim gap*/
 }
+
+
 
 @media (min-width: 560px /*ver tamanho cero na devtools
 !*/) {
@@ -215,7 +188,7 @@ a:hover {
   }
 }
 
-@media (min-width: 880px /*ver tamanho cero na devtools
+@media (min-width: 880px /*ver tamanho certo na devtools
 !*/) {
   .portfolio .grid {
     grid-template-columns: repeat(3, 240px);
@@ -227,6 +200,13 @@ a:hover {
 
 .portfolio figure {
   text-align: center;
+}
+
+.portfolio figcaption{
+  color: #f0f0f0;
+  font-size: small;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .img-portfolio {
@@ -334,7 +314,7 @@ codigo html p testar dps
 .contato a:active, /*quando o usuario clica, ja o hover é quando o mouse passa em cima*/
 .contato a:hover {
   text-decoration: none;
-  text-shadow: 0 0px 10px teal (0, 0, 0, 0.76);
+  text-shadow: 0 0px 10px white (0, 0, 0, 0.76);
 }
 
 
