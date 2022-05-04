@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Augusta Borba</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap" rel="stylesheet">
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/69babdcab3.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="spinner"></div>
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState !== "complete") {
+      document.querySelector("body").style.visibility = "hidden";
+      document.querySelector(".spinner").style.visibility = "visible";
+    } else {
+      document.querySelector(".spinner").style.display = "none";
+      document.querySelector("body").style.visibility = "visible";
+    }
+  }; 
+</script>
+<!--voltar pra o body se nao funcionar!-->
+
+<body>
+  <header id="home">
+
+    <nav class="menu">
+
+      <ul class="container">
+        <li> <a href="#home"><i class="fas fa-home"></i></a> </li>
+        <!-- <li> <a href="#sobre">About Me</a> </li> -->
+        <li> <a href="#portfolio">Portfolio</a> </li>
+        <li> <a href="#contato">Contact</a> </li>
+      </ul>
+    </nav>
+
+
+
+    <div class="titles">
+      <h1 class="site-title"> Hi, I'm Maria Augusta</h1>
+      <h2 class="site-subtitle">I'm an UX/UI student at CESAR School, based at the Digital Port of Recife, 
+        and also an undergraduate in Computer Science at the Federal University of Pernambuco. I love the 
+        process of finding out what people need and how technology can change their lifes.</h2>
+  </header>
+
+  <!-- <section class="sobre container" id="sobre">
+
+    <h2>Sobre</h2>
+
+    <figure class="avatar">
+      <img src="./img/perfil.jpg" alt="Maria Augusta">
+    </figure>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et magnam, incidunt nisi voluptas rem aliquam quo ullam
+      quisquam, quae tempora consequuntur voluptatibus cumque deleniti veniam similique quam quos accusamus omnis?</p>
+
+    <p>Dicta praesentium rerum, enim quo est quaerat. Obcaecati suscipit mollitia nam, laboriosam voluptates dolore
+      exercitationem soluta labore, praesentium, atque quo. Nobis rem voluptatum unde, voluptates sit illum natus
+      repellat culpa?</p>
+
+    <p> Sequi asperiores eligendi, sed deserunt eius numquam odit sint exercitationem molestiae, suscipit ullam nobis
+      nostrum mollitia ad! Qui itaque ipsa architecto veritatis. Perspiciatis repellendus maxime, commodi eum temporibus
+      aliquid quisquam!
+    </p>
+
+    <p>Site connstruido durante a <a href="https://www.alura.com.com/imersao-css">Imersão CSS da Alura</a>:)</p>
+
+  </section> -->
+
+  <section class="portfolio container" id="portfolio">
+    <h2>Portfolio</h2>
+
+    <div class="grid">
+      <figure>
+        <a target="_blank" href="https://www.behance.net/gallery/139059989/Nike-UI-Project">
+          <img class="img-portfolio" src="./img/nike_ui_front.png" alt="Nike UI Project">
+        </a>
+        <figcaption>Nike UI Project</figcaption>
+      </figure>
+      <figure>
+        <a target="_blank" href="https://www.behance.net/gallery/143020741/Landing-Page-EVE-Galerie">
+          <img class="img-portfolio" src="./img/eve_landing_page_front.png" alt="ÈVE Galerie landing page">
+        </a>
+        <figcaption>ÈVE Galerie Landing Page</figcaption>
+      </figure>
+      <figure>
+        <a target="_blank" href="https://www.behance.net/gallery/136215525/Beadedbr-Identidade-Visual-Design-Kit">
+          <img class="img-portfolio" src="./img/beaded_front.png" alt="Beaded.br Identidade Visual">
+        </a>
+        <figcaption>Beaded.br Identidade Visual</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="contato container" id="contato">
+    <h2>Contact</h2>
+    <div class="grid icons">
+      <a target="_blank" href="https://github.com/mariaaugustamb">
+        <i class="fab fa-github"></i>
+      </a>
+      <a target="_blank" href="https://www.linkedin.com/in/mariaaugustamb/">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a target="_blank" href="https://www.behance.net/mariaborba2">
+        <i class="fab fa-behance"></i>
+      </a>
+      <a href="mailto:mariaaugusta_mota@hotmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </section>
+</body>
+
+</html>

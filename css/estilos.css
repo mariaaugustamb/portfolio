@@ -1,0 +1,343 @@
+/*
+#baffff - tifannt claro
+#4ad3d3 - mais escuro
+class or id?
+  quando usa classe no css bota .nomeDaClasse e altera todos os elementos da classe, quando usar id, usa o #nomeDoId e so altera o elemento que esta com o id, ou seja, so deve existir um elemento na pagina interia com aquele id.
+
+*/
+
+/*vai aplicar tudo no comeco por padrao - soft reset do css*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*background-image: url("https://i.pinimg.com/originals/e4/1e/94/e41e94f53b51eabcf67af63019a67863.jpg");*/
+  /*background-image: linear-gradient(white,#a4d1cf, #36d6ce);*/
+  /* background-image: url("../img/others.png"); */
+  background-color: black;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100vw 100vh; /*100% viewport height - tamanho da tela */
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  height: 100vh;
+}
+
+/*se a tela tiver pelo menos 400px carregara esses estilos*/
+@media (min-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* #home{
+  background-image: url(/img/home2.png);
+  background-position: center;
+} */
+
+header {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /*centralizar(os dois ultimos*/
+}
+
+.menu {
+  background-color: black;
+  position: fixed; /*fixa o elemento na tela, inclusive sobre outros elementos, mexe com o eixo z da tela*/
+  width: 100vw;
+  top: 0; /*so funciona se o display estiver declarado e mantem o elemento nessa quantidade de pixels distante do topo*/
+  z-index: 1;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.menu ul {
+  display: flex; /*exibe os elementos lado a lado*/
+  justify-content: space-around; /*separa os elementos que ficam grudados apos o uso do display flex(so funciona com o uso desse display) space-between so bota espaco nas do meio. ja space-around coloca em todos*/
+}
+
+/*todos os elementos lis dentro da classe menu terao essas caracteristicas*/
+.menu li {
+  list-style: none;
+}
+
+
+.menu a {
+  display: block; /*transforma em um quadrado que quebra texto. o padrao do a é display inline*/
+  font-size: medium;
+  font-family: "Poppins", sans-serif;
+  padding: 10px 20px;
+  background-color:none;
+  transition: background-color 1s, color 1s;
+}
+
+.menu a:hover {
+  /* background-color: white;
+  color: black; */
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+ 
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #f0f0f0;
+  animation: spinner .6s linear infinite;
+}
+
+@keyframes spinner {
+  from{transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+ 
+.titles {
+  transform: scale(0.2) translate(0 50vh);
+  opacity: 0;
+
+  animation: linear 1.5s animacaoTitulo forwards; /*fowards mantem no ultimo estado da animacao!*/
+}
+
+@keyframes animacaoTitulo {
+  100% {
+    transform: scale(1) translate(0);
+    opacity: 01;
+  }
+}
+
+/*poderia fazer .site-title, .site-subtitle{}, ja que as prorpiedades sao iguais. ainda poderia declara .site-subtitle{} e fazer coisas diferentes nele*/
+.site-title {
+  color: #f0f0f0;
+  font-family: "Poppins", sans-serif;
+  font-weight:700;
+  text-align: center;
+  font-size: 2.5em; /*x * tamanho do body*/
+}
+
+.site-subtitle {
+  color: #f0f0f0;
+  text-align: center;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+}
+
+.sobre,
+.contato,
+.portfolio {
+  padding: 2em;
+  min-height: 100vh; /*ter pelo menos essa altura*/ 
+}
+
+@media (min-width: 1200px){
+  .container { 
+    max-width: 1200px;/* largura maxima do texto*/
+    margin-left: auto; /* margins para centraligar os elementos, nao funciona com top e bottom*/
+    margin-right: auto;
+  }
+  
+}
+
+.sobre h2,
+.contato h2,
+.portfolio h2 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2em;
+  font-size: 2em;
+  /*text-align: center;*/
+}
+
+.sobre a{
+  color: teal;
+}
+
+/* .sobre a:hover{
+  color: teal;
+} */
+
+.sobre p{
+  margin-bottom: 1em;
+  text-indent: 1.5em; /*recuo do paragrafo*/
+  text-align: justify; /*justifica o texto*/
+}
+
+.sobre .avatar{
+  margin-left: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+} 
+
+@media (min-width:600px){
+  .sobre .avatar{
+    float: right;/*deveria fazer o texto ficar do lado da imagem mas quebrou o codigo e eu nao faco a minima ideia pq - so funcionou quando fixei o background*/
+  }
+}
+
+.sobre .avatar img{
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%); /*tipo uma mascara, mas corta o elemento. https://bennettfeely.com/clippy/ - site com poligonos prontos.*/
+}
+
+.portfolio .grid {
+  display: grid; /*diferentemente do flex, o grid nao forca colunas*/
+  gap: 1.5em; /*quando usar grid nao usar margin, mas sim gap*/
+}
+
+@media (min-width: 560px /*ver tamanho cero na devtools
+!*/) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+
+@media (min-width: 880px /*ver tamanho cero na devtools
+!*/) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 240px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 48px - 8em);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
+}
+
+.img-portfolio {
+  height: 180px;
+  width: 240px;
+  object-fit: cover; /*bota a imagem no espaco sem deformar*/
+  /*object-position - define qual parte da imagem vai aparecer
+  border-radius: ; - torna redonda a borda*/
+  border-radius: 10px;
+  transition: transform 0.5s;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.2);
+}
+
+/* .card{
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover{
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back{
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-back{
+  background-color: pink;
+  height: 180px;
+  width: 100%;
+  transform: rotateY(180deg);
+} nao funcionou ns pq 
+codigo html p testar dps
+  <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="https://image.flaticon.com/icons/svg/2924/2924737.svg" alt="eCommerce">
+          <figcaption>eCommerce</figcaption>
+        </figure>
+
+        <div class="card-back">
+          Hello world, im the back
+        </div>
+      </div>
+
+      <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="https://image.flaticon.com/icons/svg/2924/2924737.svg" alt="Mobile">
+          <figcaption>Mobile</figcaption>
+        </figure>
+
+        <div class="card-back">
+          Hello world, im the back
+        </div>
+      </div>
+
+      <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="https://image.flaticon.com/icons/svg/2924/2924737.svg" alt="Web design">
+          <figcaption>Web design</figcaption>
+        </figure>
+
+        <div class="card-back">
+          Hello world, im the back
+        </div>
+      </div>
+
+      <div class="card">
+        <figure class="card-front">
+          <img class="img-portfolio" src="https://image.flaticon.com/icons/svg/2924/2924737.svg"
+            alt="Projetos pessoais">
+          <figcaption>Projetos pessoais</figcaption>
+        </figure>
+
+        <div class="card-back">
+          Hello world, im the back
+        </div>
+      </div>*/
+
+@media (min-width: 1200px) {
+  .img-portfolio {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: #f0f0f0;
+  font-size: 4em;
+  transition: text-shadow 0.5s;
+  margin: 20px;
+}
+
+.contato a:active, /*quando o usuario clica, ja o hover é quando o mouse passa em cima*/
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0 0px 10px teal (0, 0, 0, 0.76);
+}
+
+
+/* caniuse.com
+https://css-doodle.com/
+home icon - site dos icones */ 
