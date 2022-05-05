@@ -170,7 +170,6 @@ a:hover {
   font-size: 1.2em;
 }
 
-.sobre,
 .contato,
 .portfolio {
   padding: 2em;
@@ -242,11 +241,22 @@ a:hover {
   transition: transform 0.5s;
 }
 
-/* .img-portfolio:hover {
-  transform: scale(1.2);
-} */
 
-/* */
+@media (max-width: 768px) {
+  /* For mobile phones: */
+  .grid{
+    justify-content: center;
+  }
+
+  .card:hover{
+    transform: none;
+  }
+
+  .portfolio figcaption{
+    text-align: left;
+  }
+}
+
 
 @media (min-width: 1200px) {
   .img-portfolio {
