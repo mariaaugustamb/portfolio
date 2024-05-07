@@ -273,6 +273,12 @@ a:hover {
 
 
 @media (min-width: 1200px) {
+  .portfolio .grid{
+    grid-template-columns: repeat(3, 360px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 48px - 8em);
+  }
   .img-portfolio {
     height: auto;
     width: 100%;
